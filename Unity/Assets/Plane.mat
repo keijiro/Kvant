@@ -7,8 +7,9 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Plane
-  m_Shader: {fileID: 4800000, guid: a24df0f85b7f14f949d78f29d25cc57d, type: 3}
+  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -27,16 +28,16 @@ Material:
       data:
         first:
           name: _Specular
-        second: .300000012
+        second: .0599999987
       data:
         first:
           name: _Gloss
-        second: 1
+        second: .460000008
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .360637188, g: .359861612, b: .382352948, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
