@@ -54,14 +54,7 @@ public class KvantNormalDeformer : MonoBehaviour
         {
             var sv = sourceVertices [i];
             var crd = (sv + offs) * scale;
-            var disp = 0.0f;
-            var w = 1.0f;
-            for (var oct = 0; oct < 4; oct++)
-            {
-                disp += Kvant.Noise (crd) * w;
-                w *= 2.0f;
-                crd *= 2.0f;
-            }
+            var disp = Kvant.Fractal4Coeffs(crd, 1, 2, 4, 8);
             vertices [i] = sv + sourceNormals [i] * disp * noise;
         }
 

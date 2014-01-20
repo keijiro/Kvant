@@ -63,6 +63,11 @@ public static class Kvant
     {
         return KvantFBM3D (coord.x, coord.y, coord.z, octave);
     }
+
+    public static float Fractal4Coeffs (Vector3 coord, float w0, float w1, float w2, float w3)
+    {
+        return KvantFractal4Coeffs (coord.x, coord.y, coord.z, w0, w1, w2, w3);
+    }
     
     #endregion
 
@@ -86,6 +91,9 @@ public static class Kvant
     [DllImport ("Kvant")]
     private static extern float KvantFBM3D (float x, float y, float z, int octave);
     
+    [DllImport ("Kvant")]
+    private static extern float KvantFractal4Coeffs (float x, float y, float z, float w0, float w1, float w2, float w3);
+
     #endregion
 
 #else
@@ -191,6 +199,14 @@ public static class Kvant
             w *= 0.5f;
         }
         return f;
+    }
+
+    public static float Fractal4Coeffs (Vector3 coord, float w0, float w1, float w2, float w3)
+    {
+        var f = Noise (coord) * w0;
+        f += Noise (coord * 2) * w1;
+        f += Noise (coord * 4) * w2;
+        return f + Noise (coord * 8) * w3;
     }
 
     #endregion

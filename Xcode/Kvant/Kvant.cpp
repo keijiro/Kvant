@@ -1,5 +1,5 @@
 //
-// Keijiro Takahashi (C) 2013
+// Keijiro Takahashi (C) 2013, 2014
 // https://github.com/keijiro/kvant
 //
 // The implementation of the noise functions are
@@ -165,4 +165,15 @@ extern "C" float KvantFBM3D(float x, float y, float z, int octave)
         w *= 0.5f;
     }
     return f;
+}
+
+extern "C" float KvantFractal4Coeffs(float x, float y, float z, float w0, float w1, float w2, float w3)
+{
+    auto f = w0 * noise(x, y, z);
+    x *= 2.0f; y *= 2.0f; z *= 2.0f;
+    f += w1 * noise(x, y, z);
+    x *= 2.0f; y *= 2.0f; z *= 2.0f;
+    f += w2 * noise(x, y, z);
+    x *= 2.0f; y *= 2.0f; z *= 2.0f;
+    return f + w3 * noise(x, y, z);
 }
