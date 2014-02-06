@@ -1,19 +1,24 @@
-// Mesh deformation towards the normal vector.
+// Generic Mesh Deformer
 // By Keijiro Takahashi, 2014
 
 using UnityEngine;
 using System.Collections;
 
-public class KvantNormalDeformer : MonoBehaviour
+public class KvantGenericDeformer : MonoBehaviour
 {
     // Public properties.
     public bool smooth = true;
-    public bool fractal = true;
+    public bool surfaceSpace = false;
     public int octave = 3;
-    public float deformAmount = 1.0f;
-    public float noiseScale = 1.0f;
-    public Vector3 noiseVelocity = Vector3.right * 0.2f;
-    public Vector3 noiseOffset;
+    public Vector3 deformAmount = Vector3.one;
+    public Vector3 noiseScale = Vector3.one;
+    public Vector3 noiseVelocity1 = Vector3.right;
+    public Vector3 noiseVelocity2 = Vector3.up;
+    public Vector3 noiseVelocity3 = Vector3.forward;
+    public float noiseSpeed = 0.2f;
+    public Vector3 noiseOffset1 = Vector3.right;
+    public Vector3 noiseOffset2 = Vector3.up;
+    public Vector3 noiseOffset3 = Vector3.forward;
 
     // Main mesh object.
     Mesh mesh;
@@ -21,7 +26,9 @@ public class KvantNormalDeformer : MonoBehaviour
     // Source mesh information.
     int[] index;
     Vector3[] position;
-    Vector3[] normal;
+    Vector3[] vector1;  // normal
+    Vector3[] vector2;  // tangent
+    Vector3[] vector3;  // binormal
 
     // Temporary vertex arrays.
     Vector3[] temp1;
@@ -29,17 +36,31 @@ public class KvantNormalDeformer : MonoBehaviour
 
     void Awake ()
     {
-        var meshFilter = GetComponent<MeshFilter> ();
+        var meshFilter = GetComponent<MeshFilter>();
         var source = meshFilter.sharedMesh;
 
         // Copy the basic information.
         index = source.GetIndices(0);
         position = source.vertices;
-        normal = source.normals;
+        vector1 = source.normals;
+
+        if (surfaceSpace)
+        {
+            // Copy the tangent vectors (with removing the w component) and make binormal vectors.
+            vector2 = new Vector3[position.Length];
+            vector3 = new Vector3[position.Length];
+
+            var tangents = source.tangents;
+            for (var i = 0; i < position.Length; i++)
+            {
+                vector2[i] = (Vector3)tangents[i];
+                vector3[i] = Vector3.Cross(vector1[i], vector2[i]) * tangents[i].w;
+            }
+        }
 
         // Make a new mesh.
-        mesh = new Mesh ();
-        mesh.MarkDynamic ();
+        mesh = new Mesh();
+        mesh.MarkDynamic();
 
         if (smooth)
         {
@@ -95,18 +116,26 @@ public class KvantNormalDeformer : MonoBehaviour
 
     void Update ()
     {
-        // Move the offset vector.
-        noiseOffset += noiseVelocity * Time.deltaTime;
+        // Move the offset vectors.
+        var delta = Time.deltaTime * noiseSpeed;
+
+        noiseOffset1 += noiseVelocity1 * delta;
+        noiseOffset2 += noiseVelocity2 * delta;
+        noiseOffset3 += noiseVelocity3 * delta;
 
         // Move the vertices.
-        if (fractal)
+        if (surfaceSpace)
         {
             for (var i = 0; i < position.Length; i++)
             {
                 var v = position[i];
-                var c = (v + noiseOffset) * noiseScale;
-                var d = Kvant.Fractal(c, octave) * deformAmount;
-                temp1[i] = v + normal[i] * d;
+                var c1 = (v + noiseOffset1) * noiseScale.x;
+                var c2 = (v + noiseOffset2) * noiseScale.y;
+                var c3 = (v + noiseOffset3) * noiseScale.z;
+                v += vector1[i] * (Kvant.Fractal(c1, octave) * deformAmount.x);
+                v += vector2[i] * (Kvant.Fractal(c2, octave) * deformAmount.y);
+                v += vector3[i] * (Kvant.Fractal(c3, octave) * deformAmount.z);
+                temp1[i] = v;
             }
         }
         else
@@ -114,9 +143,13 @@ public class KvantNormalDeformer : MonoBehaviour
             for (var i = 0; i < position.Length; i++)
             {
                 var v = position[i];
-                var c = (v + noiseOffset) * noiseScale;
-                var d = Kvant.Fractal4Coeffs(c, 1, 2, 4, 8) * deformAmount * 0.03125f;
-                temp1[i] = v + normal[i] * d;
+                var c1 = (v + noiseOffset1) * noiseScale.x;
+                var c2 = (v + noiseOffset2) * noiseScale.y;
+                var c3 = (v + noiseOffset3) * noiseScale.z;
+                v += Vector3.right   * (Kvant.Fractal(c1, octave) * deformAmount.x);
+                v += Vector3.up      * (Kvant.Fractal(c2, octave) * deformAmount.y);
+                v += Vector3.forward * (Kvant.Fractal(c3, octave) * deformAmount.z);
+                temp1[i] = v;
             }
         }
 
