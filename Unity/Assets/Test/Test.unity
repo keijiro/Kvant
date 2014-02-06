@@ -248,7 +248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &193594574
 Transform:
   m_ObjectHideFlags: 0
@@ -996,7 +996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &1930591176
 Renderer:
   m_ObjectHideFlags: 0
@@ -1031,7 +1031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 1
   surfaceSpace: 0
-  octave: 3
+  octave: 4
   deformAmount: {x: .5, y: .5, z: .5}
   noiseScale: {x: 1, y: 1, z: 1}
   noiseVelocity1: {x: 1, y: 0, z: 0}
@@ -1047,7 +1047,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1930591175}
-  m_Mesh: {fileID: 4300020, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
+  m_Mesh: {fileID: 4300034, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
 --- !u!4 &1930591179
 Transform:
   m_ObjectHideFlags: 0
@@ -1056,7 +1056,7 @@ Transform:
   m_GameObject: {fileID: 1930591175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.39999998, y: 1.39999998, z: 1.39999998}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &2056525416

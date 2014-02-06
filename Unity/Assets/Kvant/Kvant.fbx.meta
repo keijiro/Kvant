@@ -21,6 +21,7 @@ ModelImporter:
     100030: Kvant_Plane_4K
     100032: Kvant_Cylinder_2000
     100034: Kvant_Cylinder_500
+    100036: Kvant_Icosphere_5
     400000: Icosahedron
     400002: Icosahedron_Subdiv
     400004: Icosahedron_Subdiv2
@@ -39,6 +40,7 @@ ModelImporter:
     400030: Kvant_Plane_4K
     400032: Kvant_Cylinder_2000
     400034: Kvant_Cylinder_500
+    400036: Kvant_Icosphere_5
     2300000: Icosahedron
     2300002: Icosahedron_Subdiv
     2300004: Icosahedron_Subdiv2
@@ -56,6 +58,7 @@ ModelImporter:
     2300028: Kvant_Plane_4K
     2300030: Kvant_Cylinder_2000
     2300032: Kvant_Cylinder_500
+    2300034: Kvant_Icosphere_5
     3300000: Icosahedron
     3300002: Icosahedron_Subdiv
     3300004: Icosahedron_Subdiv2
@@ -73,6 +76,7 @@ ModelImporter:
     3300028: Kvant_Plane_4K
     3300030: Kvant_Cylinder_2000
     3300032: Kvant_Cylinder_500
+    3300034: Kvant_Icosphere_5
     4300000: Plane_4K
     4300002: Plane_1K
     4300004: Icosahedron_Subdiv4
@@ -90,6 +94,7 @@ ModelImporter:
     4300028: Kvant_Icosphere_0
     4300030: Kvant_Cylinder_2000
     4300032: Kvant_Cylinder_500
+    4300034: Kvant_Icosphere_5
     7400000: Default Take
     9500000: //RootNode
   materials:
