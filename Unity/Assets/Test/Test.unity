@@ -104,17 +104,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 0
-  surfaceSpace: 0
-  octave: 6
-  deformAmount: {x: 2, y: 2, z: 2}
-  noiseScale: {x: .300000012, y: .300000012, z: .300000012}
+  surfaceSpace: 1
+  octave: 5
+  deformAmount: {x: 1.39999998, y: 1.39999998, z: 1.39999998}
+  noiseScale: {x: .5, y: .5, z: .5}
   noiseVelocity1: {x: 1, y: 0, z: 0}
   noiseVelocity2: {x: 0, y: 1, z: 0}
   noiseVelocity3: {x: 0, y: 0, z: 1}
   noiseSpeed: .300000012
-  noiseOffset1: {x: 0, y: -4, z: 0}
-  noiseOffset2: {x: 0, y: -4, z: 0}
-  noiseOffset3: {x: 0, y: -4, z: 0}
+  noiseOffset1: {x: 0, y: 0, z: 2}
+  noiseOffset2: {x: 0, y: 0, z: 2}
+  noiseOffset3: {x: 0, y: 0, z: 2}
 --- !u!23 &9858898
 Renderer:
   m_ObjectHideFlags: 0
@@ -142,16 +142,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 9858896}
-  m_Mesh: {fileID: 4300000, guid: bf5bc4cbd3374492db769c225245af6a, type: 3}
+  m_Mesh: {fileID: 4300030, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
 --- !u!4 &9858900
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 9858896}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: .400000006, y: 0, z: 0}
-  m_LocalScale: {x: .400000066, y: .400000066, z: .400000006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: .5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 193594574}
 --- !u!1 &161179999
@@ -184,17 +184,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 0
-  surfaceSpace: 0
-  octave: 6
-  deformAmount: {x: 2, y: 2, z: 2}
-  noiseScale: {x: .300000012, y: .300000012, z: .300000012}
+  surfaceSpace: 1
+  octave: 5
+  deformAmount: {x: 1.39999998, y: 1.39999998, z: 1.39999998}
+  noiseScale: {x: .5, y: .5, z: .5}
   noiseVelocity1: {x: 1, y: 0, z: 0}
   noiseVelocity2: {x: 0, y: 1, z: 0}
   noiseVelocity3: {x: 0, y: 0, z: 1}
   noiseSpeed: .300000012
-  noiseOffset1: {x: 0, y: -2, z: 0}
-  noiseOffset2: {x: 0, y: -2, z: 0}
-  noiseOffset3: {x: 0, y: -2, z: 0}
+  noiseOffset1: {x: 0, y: 0, z: 1}
+  noiseOffset2: {x: 0, y: 0, z: 1}
+  noiseOffset3: {x: 0, y: 0, z: 1}
 --- !u!23 &161180001
 Renderer:
   m_ObjectHideFlags: 0
@@ -222,16 +222,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 161179999}
-  m_Mesh: {fileID: 4300000, guid: bf5bc4cbd3374492db769c225245af6a, type: 3}
+  m_Mesh: {fileID: 4300030, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
 --- !u!4 &161180003
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 161179999}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: -.400000006, y: 0, z: 0}
-  m_LocalScale: {x: .400000036, y: .400000036, z: .400000006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 193594574}
 --- !u!1 &193594573
@@ -243,7 +243,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 193594574}
   m_Layer: 0
-  m_Name: Deformer 3
+  m_Name: Generic Deformer (Tube)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,9 +255,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 193594573}
-  m_LocalRotation: {x: .120636635, y: .590310693, z: -.159800053, w: -.781948864}
-  m_LocalPosition: {x: .150000006, y: .0900000036, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalRotation: {x: .249999642, y: -.25000006, z: -.066987209, w: -.933012784}
+  m_LocalPosition: {x: .100000001, y: -.100000001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 161180003}
   - {fileID: 9858900}
@@ -294,17 +294,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 0
-  surfaceSpace: 0
-  octave: 6
-  deformAmount: {x: 2, y: 2, z: 2}
-  noiseScale: {x: .300000012, y: .300000012, z: .300000012}
+  surfaceSpace: 1
+  octave: 5
+  deformAmount: {x: 1.39999998, y: 1.39999998, z: 1.39999998}
+  noiseScale: {x: .5, y: .5, z: .5}
   noiseVelocity1: {x: 1, y: 0, z: 0}
   noiseVelocity2: {x: 0, y: 1, z: 0}
   noiseVelocity3: {x: 0, y: 0, z: 1}
   noiseSpeed: .300000012
-  noiseOffset1: {x: 0, y: -6, z: 0}
-  noiseOffset2: {x: 0, y: -6, z: 0}
-  noiseOffset3: {x: 0, y: -6, z: 0}
+  noiseOffset1: {x: 0, y: 0, z: 3}
+  noiseOffset2: {x: 0, y: 0, z: 3}
+  noiseOffset3: {x: 0, y: 0, z: 3}
 --- !u!23 &501745625
 Renderer:
   m_ObjectHideFlags: 0
@@ -332,18 +332,93 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 501745623}
-  m_Mesh: {fileID: 4300000, guid: bf5bc4cbd3374492db769c225245af6a, type: 3}
+  m_Mesh: {fileID: 4300030, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
 --- !u!4 &501745627
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 501745623}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: 1.20000005, y: 0, z: 0}
-  m_LocalScale: {x: .400000095, y: .400000095, z: .400000006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 193594574}
+--- !u!1 &619862258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 619862262}
+  - 33: {fileID: 619862261}
+  - 23: {fileID: 619862260}
+  - 114: {fileID: 619862259}
+  m_Layer: 0
+  m_Name: Normal Deformer (Sphere)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &619862259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619862258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b42f20579a746af875ded40fccaa55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smooth: 1
+  fractal: 1
+  octave: 3
+  deformAmount: 1
+  noiseScale: 1
+  noiseVelocity: {x: .200000003, y: 0, z: 0}
+  noiseOffset: {x: 0, y: 0, z: 0}
+--- !u!23 &619862260
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619862258}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3bc0af0528bc544fcbcf6cc71c103201, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &619862261
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619862258}
+  m_Mesh: {fileID: 4300020, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
+--- !u!4 &619862262
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619862258}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &849928933
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +744,86 @@ MonoBehaviour:
     type: 3}
   colorCorrectionSelectiveShader: {fileID: 4800000, guid: e515e0f94cefc4c0db54b45cba621544,
     type: 3}
+--- !u!1 &1558035559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1558035563}
+  - 33: {fileID: 1558035562}
+  - 23: {fileID: 1558035561}
+  - 114: {fileID: 1558035560}
+  m_Layer: 0
+  m_Name: Generic Deformer (Plane)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1558035560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558035559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bfe9c5621574962968030db96cdca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smooth: 1
+  surfaceSpace: 1
+  octave: 5
+  deformAmount: {x: .5, y: .5, z: .5}
+  noiseScale: {x: 1, y: 1, z: 1}
+  noiseVelocity1: {x: 1, y: 0, z: 0}
+  noiseVelocity2: {x: 0, y: 1, z: 0}
+  noiseVelocity3: {x: 0, y: 0, z: 1}
+  noiseSpeed: .200000003
+  noiseOffset1: {x: 1, y: 0, z: 0}
+  noiseOffset2: {x: 0, y: 1, z: 0}
+  noiseOffset3: {x: 0, y: 0, z: 1}
+--- !u!23 &1558035561
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558035559}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3bc0af0528bc544fcbcf6cc71c103201, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &1558035562
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558035559}
+  m_Mesh: {fileID: 4300016, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
+--- !u!4 &1558035563
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1558035559}
+  m_LocalRotation: {x: -.866025507, y: 0, z: 0, w: .499999881}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1671102863
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +836,7 @@ GameObject:
   - 23: {fileID: 1671102865}
   - 114: {fileID: 1671102864}
   m_Layer: 0
-  m_Name: Deformer 1
+  m_Name: Normal Deformer (Plane)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -732,14 +887,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1671102863}
-  m_Mesh: {fileID: 4300000, guid: 419cdb79f5c1c4c4c9595f4bca316970, type: 3}
+  m_Mesh: {fileID: 4300016, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
 --- !u!4 &1671102867
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1671102863}
-  m_LocalRotation: {x: .573576272, y: 0, z: 0, w: -.819152176}
+  m_LocalRotation: {x: -.866025507, y: 0, z: 0, w: .499999881}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
@@ -774,10 +929,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 0
-  surfaceSpace: 0
-  octave: 6
-  deformAmount: {x: 2, y: 2, z: 2}
-  noiseScale: {x: .300000012, y: .300000012, z: .300000012}
+  surfaceSpace: 1
+  octave: 5
+  deformAmount: {x: 1.39999998, y: 1.39999998, z: 1.39999998}
+  noiseScale: {x: .5, y: .5, z: .5}
   noiseVelocity1: {x: 1, y: 0, z: 0}
   noiseVelocity2: {x: 0, y: 1, z: 0}
   noiseVelocity3: {x: 0, y: 0, z: 1}
@@ -812,16 +967,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699054317}
-  m_Mesh: {fileID: 4300000, guid: bf5bc4cbd3374492db769c225245af6a, type: 3}
+  m_Mesh: {fileID: 4300030, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
 --- !u!4 &1699054321
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699054317}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: -1.20000005, y: 0, z: 0}
-  m_LocalScale: {x: .400000095, y: .400000095, z: .400000006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 193594574}
 --- !u!1 &1930591175
@@ -836,7 +991,7 @@ GameObject:
   - 23: {fileID: 1930591176}
   - 114: {fileID: 1930591177}
   m_Layer: 0
-  m_Name: Deformer 2
+  m_Name: Generic Deformer (Sphere)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,9 +1030,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 1
-  surfaceSpace: 1
-  octave: 5
-  deformAmount: {x: 1, y: 1, z: 1}
+  surfaceSpace: 0
+  octave: 3
+  deformAmount: {x: .5, y: .5, z: .5}
   noiseScale: {x: 1, y: 1, z: 1}
   noiseVelocity1: {x: 1, y: 0, z: 0}
   noiseVelocity2: {x: 0, y: 1, z: 0}
@@ -892,16 +1047,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1930591175}
-  m_Mesh: {fileID: 4300000, guid: 419cdb79f5c1c4c4c9595f4bca316970, type: 3}
+  m_Mesh: {fileID: 4300020, guid: 008e21d54c3bb4c228206209a9988c6f, type: 3}
 --- !u!4 &1930591179
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1930591175}
-  m_LocalRotation: {x: .573576272, y: 0, z: 0, w: -.819152176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &2056525416
