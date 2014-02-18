@@ -68,9 +68,10 @@ public class KvantGenericDeformer : MonoBehaviour
             temp1 = new Vector3[position.Length];
             mesh.vertices = temp1;
 
-            // Simply copy the UVs.
+            // Simply copy the UVs and the tangent vectors.
             mesh.uv = source.uv;
             mesh.uv2 = source.uv2;
+            mesh.tangents = source.tangents;
 
             // Simply copy the indices.
             mesh.SetIndices(index, MeshTopology.Triangles, 0);
@@ -100,6 +101,16 @@ public class KvantGenericDeformer : MonoBehaviour
                 for (var i = 0; i < index.Length; i++)
                     uv2[i] = sourceUv2[index[i]];
                 mesh.uv2 = uv2;
+            }
+
+            // Make tangent tangent vector array for the split triangles.
+            var sourceTangents = source.tangents;
+            if (sourceTangents != null && sourceTangents.Length > 0)
+            {
+                var tangents = new Vector4[index.Length];
+                for (var i = 0; i < index.Length; i++)
+                    tangents[i] = sourceTangents[index[i]];
+                mesh.tangents = tangents;
             }
 
             // Make an index array for the split triangles.
